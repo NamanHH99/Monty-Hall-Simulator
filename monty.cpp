@@ -83,6 +83,22 @@ int main(int argc, char *argv[])
     // Run simulations
     int totalWinsStick = 0;
     int totalWinsSwitch = 0;
+    // Check for invalid input
+    if (numDoors < 3)
+    {
+        cout << "Minimum 3 doors needed for simulation" << endl;
+        return 1;
+    }
+    else if (numDoorsOpenedByHost < 0 || numDoorsOpenedByHost >= numDoors)
+    {
+        cout << "Number of doors opened by host must be between 0 and number of doors - 1" << endl;
+        return 1;
+    }
+    else if (numSimulations <= 0)
+    {
+        cout << "Number of simulations must be positive" << endl;
+        return 1;
+    }
     for (int i = 0; i < numSimulations; ++i)
     {
         auto results = montyHallSimulation(numDoors, numDoorsOpenedByHost);
