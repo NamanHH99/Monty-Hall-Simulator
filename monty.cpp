@@ -79,10 +79,7 @@ int main(int argc, char *argv[])
             return 1;
         }
     }
-
-    // Run simulations
-    int totalWinsStick = 0;
-    int totalWinsSwitch = 0;
+    
     // Check for invalid input
     if (numDoors < 3)
     {
@@ -99,6 +96,10 @@ int main(int argc, char *argv[])
         cout << "Number of simulations must be positive" << endl;
         return 1;
     }
+
+    // Run simulations
+    int totalWinsStick = 0;
+    int totalWinsSwitch = 0;
     for (int i = 0; i < numSimulations; ++i)
     {
         auto results = montyHallSimulation(numDoors, numDoorsOpenedByHost);
